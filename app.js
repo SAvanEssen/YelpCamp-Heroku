@@ -16,7 +16,8 @@ var commentRoutes = require("./routes/comments"),
   campgroundRoutes = require("./routes/campgrounds"),
   indexRoutes = require("./routes/index");
 
-const connectionString = "mongodb://localhost/yelp_camp_v13Deployed";
+// const connectionString = "mongodb://localhost/yelp_camp_v13Deployed";
+const connectionString = "mongodb+srv://save_73:<1mNTzmtEs5a3Au9I>@cluster0-u1ko3.azure.mongodb.net/test?retryWrites=true&w=majority";
 mongoose.connect(
   connectionString,
   { useNewUrlParser: true, useUnifiedTopology: true },
@@ -78,6 +79,6 @@ app.use("/campgrounds/:id/comments", commentRoutes);
 //     {name: "Mountain Goat's Rest", image: "https://cdn.pixabay.com/photo/2017/02/08/08/46/animal-2048162_1280.jpg"}
 // ]
 
-app.listen(3000, function () {
+app.listen(process.env.PORT, process.env.IP, function () {
   console.log("The YelpCamp server has started");
 });
