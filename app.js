@@ -16,15 +16,20 @@ var commentRoutes = require("./routes/comments"),
   campgroundRoutes = require("./routes/campgrounds"),
   indexRoutes = require("./routes/index");
 
+console.log(process.env.DATABASEURL);
+
+var url = process.env.DATABASEURL || "mongodb://localhost/yelp_camp_v13Deployed"
+
+mongoose.connect(process.env.DATABASEURL);
 // const connectionString = "mongodb://localhost/yelp_camp_v13Deployed";
-const connectionString = "mongodb+srv://save_73:<1mNTzmtEs5a3Au9I>@cluster0-u1ko3.azure.mongodb.net/test?retryWrites=true&w=majority";
-mongoose.connect(
-  connectionString,
-  { useNewUrlParser: true, useUnifiedTopology: true },
-  function (err) {
-    console.log("Database werkend?");
-  }
-);
+// const connectionString = "mongodb+srv://save_73:<1mNTzmtEs5a3Au9I>@cluster0-u1ko3.azure.mongodb.net/test?retryWrites=true&w=majority";
+// mongoose.connect(
+//   connectionString,
+//   { useNewUrlParser: true, useUnifiedTopology: true },
+//   function (err) {
+//     console.log("Database werkend?");
+//   }
+// );
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
