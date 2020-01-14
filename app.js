@@ -1,3 +1,4 @@
+require('dotenv').config();
 var express = require("express"),
   app = express(),
   bodyParser = require("body-parser"),
@@ -20,9 +21,14 @@ console.log(process.env.DATABASEURL);
 
 var url = process.env.DATABASEURL || "mongodb://localhost/yelp_camp_v13Deployed"
 
-mongoose.connect(process.env.DATABASEURL);
+mongoose.connect(process.env.DATABASEURL,
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useFindAndModify: false
+  }).then(() => { console.log('Database is connected') }, err => { console.log('Can not connect to the database' + err) });
 // const connectionString = "mongodb://localhost/yelp_camp_v13Deployed";
-// const connectionString = "mongodb+srv://save_73:<1mNTzmtEs5a3Au9I>@cluster0-u1ko3.azure.mongodb.net/test?retryWrites=true&w=majority";
+// const connectionString = "";
 // mongoose.connect(
 //   connectionString,
 //   { useNewUrlParser: true, useUnifiedTopology: true },
