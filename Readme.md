@@ -1,9 +1,3 @@
-This project is part of the Udemy Webdevelopers Course by Colt Steel. Been coding along and along the way will try and make it my own.
+Code Gorilla Bootcamp Groningen Project
 
-INDEX   /campgrounds
-NEW     /campgrouns/new
-CREATE  /campgrounds
-SHOW    /campgrounds/:id
-
-NEW     /campgrounds/:id/comments/new   GET
-CREATE  /campgrounds/:id/comments       POST
+This application I built as a part of the course I am taking at Code Gorilla in Groningen. Just a basic version of the app and deployed on Heroku, nevertheless a nice steppingstone to creating fully functioning, secure and more advanced webapps.
